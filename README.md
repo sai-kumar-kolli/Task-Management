@@ -1,7 +1,7 @@
 # NodeJS
 Basics of Node.JS
 
-Module - HTTP
+1. Module - HTTP
 
 The http module allows Node.js to transfer data over the HyperText Transfer Protocol (HTTP). It can create both HTTP clients and servers.
 It can handle HTTP requests and responses, manage headers, and control the HTTP status codes.
@@ -56,4 +56,18 @@ The res object is used to send a response back to the client.
 To handle the redirect request use 
         res.writeHead(301, { 'Location': '/new-page' });
 
+2.FS Module
 
+The fs module provides access to interact with server file system. It allows to read, write, create, delete and many more operations
+we have both async and synchronous file system methods. Use the async method to make event loop non blocking and use the synchronous when you running the script or usage is related to command line 
+tools, where performance is not a concern.
+  
+    methods:
+    1. fs.readFile() ,fs.readFileAsync()
+    2. fs.writeFile() ,fs.writeFileAsync()
+    3. fs.appendFile(), fs.appendFileAsync()
+    4. fs.renameFile(), fs.renameFileAsync()
+    5. fs.readdir(), fs.readdirAsync()
+    6. fs.unlink(), fs.unlinkAsync()    
+    7. fs.mkdir(), fs.mkdirAsync()
+    8. fs.exists(), fs.existsAsync()
