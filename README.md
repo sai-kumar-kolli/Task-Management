@@ -71,3 +71,15 @@ tools, where performance is not a concern.
     6. fs.unlink(), fs.unlinkAsync()    
     7. fs.mkdir(), fs.mkdirAsync()
     8. fs.exists(), fs.existsAsync()
+
+3. PATH Module
+
+The path module in Node.js provides utilities for working with file and directory paths. It helps in handling and transforming file paths in a platform-independent way.
+    1. path.basename(path) -> Returns the last portion of a path, similar to the Unix basename command.
+    2. path.resolve(path) -> Resolves a sequence of paths or path segments into an absolute path.
+    3. path.join(path1, path2, path3) -> Joins all given path segments together using the platform-specific separator and returns a normalized resulting path.
+    4. path.dirname(__dirname) -> Returns the directory name of a path, similar to the Unix dirname command.
+    5. path.extname(path) -> Returns the extension of the path from the last occurrence of the . (dot) character to the end of the string.
+    6. path.parse() -> Returns an object whose properties represent significant elements of the path
+    7. path.format() -> Returns a path string from an object, the opposite of path.parse
+    8. path.relative() -> Returns the relative path from one path to another.
