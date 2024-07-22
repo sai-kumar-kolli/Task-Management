@@ -83,3 +83,59 @@ The path module in Node.js provides utilities for working with file and director
     6. path.parse() -> Returns an object whose properties represent significant elements of the path
     7. path.format() -> Returns a path string from an object, the opposite of path.parse
     8. path.relative() -> Returns the relative path from one path to another.
+
+4. Mongodb Module
+    MongoDB is a NoSQL database that uses a flexible, document-oriented data model. It stores data in JSON-like documents, which makes it easy to work with and highly scalable.
+
+    Key Concepts:
+    Database: A container for collections. Each database has its own set of files on the file system.
+    Collection: A group of MongoDB documents. It is equivalent to an RDBMS table.
+    Document: A set of key-value pairs (fields). Documents are analogous to rows in a relational database but much more flexible.
+    Field: A key-value pair in a document. Fields are analogous to columns in a relational database. 
+
+    Query:
+
+    Comparasion operation
+        $eq: Matches values that are equal to a specified value.
+        $ne: Matches all values that are not equal to a specified value.
+        $gt: Matches values that are greater than a specified value.
+        $gte: Matches values that are greater than or equal to a specified value.
+        $lt: Matches values that are less than a specified value.
+        $lte: Matches values that are less than or equal to a specified value.
+
+        ex: const query = { age: { $gte: 25 } };
+            const docs = await collection.find(query).toArray();
+            console.log(docs);
+
+    
+    Logical operations
+        $and: Joins query clauses with a logical AND returns all documents that match the conditions of both clauses.
+        $or: Joins query clauses with a logical OR returns all documents that match the conditions of either clause.
+        $not: Inverts the effect of a query expression and returns documents that do not match the query expression.
+
+        ex: const query = { $or: [{ age: { $gt: 25 } }, { name: "Alice" }] };
+            const docs = await collection.find(query).toArray();
+            console.log(docs);
+
+    Projections
+        Projection is used to include or exclude specific fields in the returned documents.
+            Example: Find documents with only the name and age fields
+            const query = {};
+            const options = { projection: { _id: 0, name: 1, age: 1 } };
+            const docs = await collection.find(query, options).toArray();
+            console.log(docs);
+
+    Aggregations
+        The MongoDB aggregation framework provides an advanced way to perform data processing and transformations.
+
+        Basic Aggregation Pipeline
+        An aggregation pipeline consists of multiple stages, each transforming the documents as they pass through the pipeline.
+
+        Common Aggregation Stages
+            $match: Filters documents to pass only the documents that match the specified condition(s) to the next pipeline stage.
+            $group: Groups input documents by a specified identifier expression and applies the accumulator expression(s), if specified, to each group.
+            $sort: Sorts all input documents and returns them to the next stage in sorted order.
+            $project: Reshapes each document in the stream, such as by adding new fields or removing existing fields.
+            $limit: Limits the number of documents passed to the next stage in the pipeline.
+            $skip: Skips over the specified number of documents that pass into the stage and passes the remaining documents to the next stage in the pipeline.
+            $unwind: Deconstructs an array field from the input documents to output a document for each element.

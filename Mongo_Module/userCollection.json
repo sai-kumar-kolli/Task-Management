@@ -1,0 +1,38 @@
+[
+    {
+      "_id": 1,
+      "name": "Alice",
+      "age": 25,
+      "address": "123 Main St",
+      "hobbies": ["reading", "traveling", "swimming"]
+    },
+    {
+      "_id": 2,
+      "name": "Bob",
+      "age": 30,
+      "address": "456 Elm St",
+      "hobbies": ["hiking", "cycling"]
+    },
+    {
+      "_id": 3,
+      "name": "Charlie",
+      "age": 22,
+      "address": "789 Oak St",
+      "hobbies": ["gaming", "drawing"]
+    },
+    {
+      "_id": 4,
+      "name": "David",
+      "age": 28,
+      "address": "101 Maple St",
+      "hobbies": ["cooking", "photography"]
+    },
+    {
+      "_id": 5,
+      "name": "Eve",
+      "age": 35,
+      "address": "202 Birch St",
+      "hobbies": ["writing", "gardening"]
+    }
+  ]
+  
