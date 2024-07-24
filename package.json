@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "DEBUG=* nodemon Express_Module/express.js",
+    "start": "DEBUG=express nodemon Express_Module/express.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,19 @@
   },
   "homepage": "https://github.com/sai-kumar-kolli/NodeJS#readme",
   "dependencies": {
+    "chalk": "^5.3.0",
+    "debug": "^4.3.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
     "mongodb": "^6.8.0",
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.4"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": 2000,
+    "env": {
+      "PORT": 4200
+    }
   }
 }
