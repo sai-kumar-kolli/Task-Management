@@ -2,29 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import './styles.css';
-import keycloak from './auth/keycloak';
-import { ReactKeycloakProvider } from '@react-keycloak/web';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
-// Initialize Keycloak
-const initOptions = {
-  onLoad: 'login-required', // Ensure user is authenticated
-  checkLoginIframe: false,
-  pkceMethod:'S256'  // Disable login iframe check
-};
-
-keycloak.init(initOptions).then(authenticated => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <ReactKeycloakProvider keycloak={keycloak}>
-        <App />
-      </ReactKeycloakProvider>
-    </Provider>,
-    document.getElementById('root')
-  );
-}).catch(err => {
-  console.error('Keycloak initialization failed', err);
-});
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
