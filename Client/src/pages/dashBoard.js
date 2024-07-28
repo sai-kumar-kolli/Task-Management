@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "@mui/material";
 import TaskForm from "../features/tasks/taskForm/taskForm";
 import TaskList from "../features/tasks/taskList/taskList";
@@ -8,7 +8,7 @@ import './dashboard.css';
 
 const Dashboard = () => {
 
-
+    const [editableTask, setEditableTask] = useState({})
 
 
     return (
@@ -16,8 +16,8 @@ const Dashboard = () => {
             <Container>
                 {true ?
                     <>
-                        <TaskForm />
-                        <TaskList />
+                        <TaskForm editableTask={editableTask} setEditableTask={setEditableTask}/>
+                        <TaskList setEditableTask={setEditableTask} />
                     </>
                     : <div>
                         <section className="about">

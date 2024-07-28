@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const TaskSchema = new mongoose.Schema({
     id: {
-        type: Number,
+        type: String,
         required: true,
         unique: true // Ensure the ID is unique
     },

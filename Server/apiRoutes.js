@@ -4,6 +4,8 @@ const { getTasks, createTask, deleteTask, updateTask } = require('./taskControll
 
 const router = express.Router()
 
+console.log("imside router")
+
 // CRUD routes
 router.get('/tasks', getTasks);
 router.post('/tasks', createTask);
