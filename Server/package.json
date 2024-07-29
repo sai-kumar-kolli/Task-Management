@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd Client && npm install --force && npm run build && cd .. && cd Server && npm install && node app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
