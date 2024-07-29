@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const getTasks = createAsyncThunk('Tasks/getTasks', async (payload, thunkapi) => {
     console.log(thunkapi.getState())
     try {
-        const data = await fetch('http://localhost:3001/api/tasks', {
+        const data = await fetch('api/tasks', {
             headers: {
                 'X-CSRF-Token': thunkapi.getState().auth.csrfToken
             }
@@ -21,7 +21,7 @@ export const addTasks = createAsyncThunk('Tasks/addTask', async (payload, thunkA
     const state = thunkAPI.getState();
     const csrfToken = state.auth.csrfToken;
     try {
-        const response = await fetch('http://localhost:3001/api/tasks', {
+        const response = await fetch('api/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export const addTasks = createAsyncThunk('Tasks/addTask', async (payload, thunkA
 
 export const updatedTask = createAsyncThunk('Task/updatedTask', async (payload, thunkapi) => {
     try {
-        const response = await fetch(`http://localhost:3001/api/tasks/${payload.id}`, {
+        const response = await fetch(`api/tasks/${payload.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ export const updatedTask = createAsyncThunk('Task/updatedTask', async (payload, 
 export const deleteTask = createAsyncThunk('Task/deleteTask', async (payload, thunkapi) => {
     console.log(payload);
     try {
-        const url = `http://localhost:3001/api/tasks/${payload}`;
+        const url = `api/tasks/${payload}`;
         const response = await fetch(url, {
             method: 'DELETE',
             headers: {

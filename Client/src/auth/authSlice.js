@@ -3,11 +3,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 // Async thunk to fetch CSRF token
 export const fetchCsrfToken = createAsyncThunk('auth/fetchCsrfToken', async (_, { rejectWithValue }) => {
     try {
-        const response = await fetch('http://localhost:3001/api/csrf-token', {
+        const response = await fetch('api/csrf-token', {
             credentials: 'include',
         });
         const data = await response.json();
-        console.log("kjhjkfhdsjfhjd")
         return data.csrfToken
     } catch (error) {
         console.error('Failed to fetch CSRF token:', error);
