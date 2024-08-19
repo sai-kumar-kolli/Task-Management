@@ -1,0 +1,15 @@
+.task-list {
+    margin-top: 20px;
+}
+
+.task-list-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.task-list-actions {
+    display: flex;
+    justify-content: flex-end;
+}

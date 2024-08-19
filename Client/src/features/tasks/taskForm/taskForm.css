@@ -1,0 +1,10 @@
+.task-form-card {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.task-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
